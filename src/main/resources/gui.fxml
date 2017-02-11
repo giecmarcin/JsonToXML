@@ -4,8 +4,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="492.0" prefWidth="719.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="492.0" prefWidth="719.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
    <children>
       <TextArea fx:id="tASource" layoutX="19.0" layoutY="89.0" prefHeight="389.0" prefWidth="337.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="19.0" AnchorPane.topAnchor="89.0" />
       <Label layoutX="19.0" layoutY="72.0" text="JSON:" />
@@ -14,5 +13,6 @@
       <Button fx:id="btnSelectFile" layoutX="19.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" text="Wybierz plik" />
       <Button fx:id="btnConvert" layoutX="19.0" layoutY="46.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" text="Konwertuj" />
       <Button fx:id="btnClear" layoutX="116.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" text="Wyczyść" />
+      <Button fx:id="btnSave" layoutX="116.0" layoutY="46.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" text="Zapisz" />
    </children>
 </AnchorPane>

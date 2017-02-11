@@ -5,7 +5,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
 import java.io.*;
 import java.net.URL;
@@ -33,8 +35,17 @@ public class Controller implements Initializable {
     @FXML
     private TextArea tATarget;
 
+    @FXML
+    private Button btnSave;
+
+    @FXML
+    private AnchorPane anchorPane;
+
+    private Stage stage;
+
     public void initialize(URL location, ResourceBundle resources) {
         configureButtons();
+        //stage = (Stage) anchorPane.getScene().getWindow();
     }
 
     void configureButtons() {
@@ -84,6 +95,24 @@ public class Controller implements Initializable {
             }
         });
 
+        btnSave.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                Stage stage = (Stage) btnSave.getScene().getWindow();
+                FileChooser fileChooser = new FileChooser();
+                //Set extension filter
+                FileChooser.ExtensionFilter extFilter =
+                        new FileChooser.ExtensionFilter("XML files (*.xml)", "*.xml");
+                fileChooser.getExtensionFilters().add(extFilter);
+                //Show save file dialog
+                File file = fileChooser.showSaveDialog(stage);
+
+                if (file != null) {
+                    SaveFile(tATarget.getText(), file);
+                }
+            }
+        });
+
     }
 
     public String convertFromTextArea(String source) {
@@ -102,5 +131,18 @@ public class Controller implements Initializable {
             alert.show();
         }
         return xml;
+    }
+
+    private void SaveFile(String content, File file) {
+        try {
+            FileWriter fileWriter;
+
+            fileWriter = new FileWriter(file);
+            fileWriter.write(content);
+            fileWriter.close();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+
     }
 }
