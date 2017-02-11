@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="JavaCup">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/JavaCup.jar!/" />
+      <root url="jar://$PROJECT_DIR$/JFlex.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/JavaCup.jar!/" />
+    </SOURCES>
+  </library>
+</component>
